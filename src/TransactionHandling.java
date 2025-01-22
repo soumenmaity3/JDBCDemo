@@ -42,8 +42,6 @@ public class TransactionHandling {
                     System.out.println("Invalid choice.");
             }
         } while (choice != 5);
-        scan.close();
-
     }
 
     public static void openAccount() throws Exception {
@@ -78,7 +76,6 @@ public class TransactionHandling {
         } else {
             System.out.println("Account Creation Failed.");
         }
-        scan.close();
     }
 
     public static void login() throws Exception {
@@ -125,7 +122,6 @@ public class TransactionHandling {
         } else {
             System.out.println("Login Failed or Account not found.");
         }
-        scan.close();
     }
 
     public static void debit(int ac_number1) throws Exception {
@@ -169,7 +165,6 @@ public class TransactionHandling {
         } else {
             System.out.println("Transaction failed");
         }
-        scan.close();
 
     }
 
@@ -181,7 +176,6 @@ public class TransactionHandling {
         int amount = scan.nextInt();
         if (amount < 0) {
             System.out.println("Amount cannot be negative");
-            scan.close();
             return;
         }
         PreparedStatement preparedStatement = con.prepareStatement(creditSql);
@@ -193,7 +187,6 @@ public class TransactionHandling {
         } else {
             System.out.println("Credit Failed.");
         }
-        scan.close();
     }
 
     public static void deleteAccount() throws Exception {
@@ -213,7 +206,6 @@ public class TransactionHandling {
         } else {
             System.out.println("Account Deactivate Failed");
         }
-        scan.close();
     }
 
     public static void checkBa(int ac_number3) throws Exception {
